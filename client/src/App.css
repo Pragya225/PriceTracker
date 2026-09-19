@@ -1,0 +1,33 @@
+/* ============================================
+   src/App.css
+   ============================================ */
+
+.app-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1rem 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.app-nav .brand {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--paper);
+  margin-right: auto;
+}
+.app-nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.app-nav a:hover,
+.app-nav a.active {
+  color: var(--amber);
+  text-decoration: none;
+}
+
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.75rem 4rem;
+}

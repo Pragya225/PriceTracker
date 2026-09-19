@@ -1,0 +1,43 @@
+/* ============================================
+   src/pages/ProductDetail.css
+   ============================================ */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.back-link:hover {
+  color: var(--amber);
+}
+
+.summary-panel {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.25rem 0;
+  margin-bottom: 1rem;
+}
+.summary-price {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  color: var(--paper);
+}
+.summary-line {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+.summary-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.summary-meta dt {
+  color: var(--muted);
+}
+.summary-meta dd {
+  margin: 0;
+}

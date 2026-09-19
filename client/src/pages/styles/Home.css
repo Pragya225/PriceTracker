@@ -1,0 +1,13 @@
+/* ============================================
+   src/pages/Home.css
+   ============================================ */
+
+.search-input {
+  margin-bottom: 2rem;
+}
+
+.search-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
