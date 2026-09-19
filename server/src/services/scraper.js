@@ -1,6 +1,3 @@
-// ============================================
-// src/services/scraper.js
-// ============================================
 import { getProductPrice } from "./priceClient.js";
 import db from "../db/db.js";
 

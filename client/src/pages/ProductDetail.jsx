@@ -1,6 +1,3 @@
-// ============================================
-// src/pages/ProductDetail.jsx
-// ============================================
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getProductHistory, getProductLog } from "../api.js";
@@ -8,7 +5,7 @@ import PriceHistoryTable from "../components/PriceHistoryTable.jsx";
 import ScrapeLogTable from "../components/ScrapeLogTable.jsx";
 import "./styles/ProductDetail.css";
 
-export default function ProductDetail() {
+const ProductDetail = () => {
   const { id } = useParams();
   const [history, setHistory] = useState([]);
   const [log, setLog] = useState([]);
@@ -38,14 +35,14 @@ export default function ProductDetail() {
   return (
     <div className="page">
       <Link to="/dashboard" className="back-link">
-        ← Back to dashboard
+        Back to dashboard
       </Link>
 
       <h1>Product details</h1>
 
       {latest && (
         <div className="summary-panel">
-          <div className="summary-price num">₹{latest.price}</div>
+          <div className="summary-price num">Rs.{latest.price}</div>
           <div className="summary-line">
             <span
               className={`status-dot ${latest.in_stock ? "in-stock" : "out-stock"}`}
@@ -72,4 +69,6 @@ export default function ProductDetail() {
       <ScrapeLogTable log={log} />
     </div>
   );
-}
+};
+
+export default ProductDetail;

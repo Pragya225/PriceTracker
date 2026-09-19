@@ -1,6 +1,3 @@
-// ============================================
-// src/controllers/productController.js
-// ============================================
 import { searchProducts, getProductDetail } from "../services/catalogClient.js";
 import { scrapeOne } from "../services/scraper.js";
 import db from "../db/db.js";

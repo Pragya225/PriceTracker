@@ -1,12 +1,9 @@
-// ============================================
-// src/pages/Home.jsx
-// ============================================
 import { useState, useEffect } from "react";
 import { searchProducts, trackProduct } from "../api.js";
 import ProductSearchResult from "../components/ProductSearchResult.jsx";
 import "./styles/Home.css";
 
-export default function Home() {
+const Home = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -85,4 +82,6 @@ export default function Home() {
       )}
     </div>
   );
-}
+};
+
+export default Home;

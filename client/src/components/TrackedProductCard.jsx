@@ -1,10 +1,7 @@
-// ============================================
-// src/components/TrackedProductCard.jsx
-// ============================================
 import { Link } from "react-router-dom";
 import "./component.css";
 
-export default function TrackedProductCard({ product }) {
+const TrackedProductCard = ({ product }) => {
   const latest = product.latest;
 
   return (
@@ -13,13 +10,13 @@ export default function TrackedProductCard({ product }) {
         <div>
           <div className="result-name">{product.name}</div>
           <div className="result-meta">
-            {product.brand} — {product.category}
+            {product.brand} - {product.category}
           </div>
         </div>
 
         {latest ? (
           <div className="price-cell">
-            <div className="price-value num">₹{latest.price}</div>
+            <div className="price-value num">Rs.{latest.price}</div>
             <div className="price-sub">
               <span
                 className={`status-dot ${latest.in_stock ? "in-stock" : "out-stock"}`}
@@ -36,4 +33,6 @@ export default function TrackedProductCard({ product }) {
       </div>
     </Link>
   );
-}
+};
+
+export default TrackedProductCard;

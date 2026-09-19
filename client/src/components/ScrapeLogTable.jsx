@@ -1,8 +1,6 @@
-// ============================================
-// src/components/ScrapeLogTable.jsx
-// ============================================
 import "./component.css";
-export default function ScrapeLogTable({ log }) {
+
+const ScrapeLogTable = ({ log }) => {
   if (log.length === 0)
     return <p className="empty-state">No scrape attempts logged yet.</p>;
 
@@ -29,10 +27,12 @@ export default function ScrapeLogTable({ log }) {
             </td>
             <td className="num">{row.attempt_number}</td>
             <td className="num">{row.duration_ms} ms</td>
-            <td className="result-meta">{row.error_message || "—"}</td>
+            <td className="result-meta">{row.error_message || "-"}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
-}
+};
+
+export default ScrapeLogTable;

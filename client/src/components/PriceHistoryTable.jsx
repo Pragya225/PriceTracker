@@ -1,8 +1,6 @@
-// ============================================
-// src/components/PriceHistoryTable.jsx
-// ============================================
 import "./component.css";
-export default function PriceHistoryTable({ history }) {
+
+const PriceHistoryTable = ({ history }) => {
   if (history.length === 0)
     return <p className="empty-state">No price history yet.</p>;
 
@@ -20,8 +18,8 @@ export default function PriceHistoryTable({ history }) {
         {history.map((row) => (
           <tr key={row.id}>
             <td className="num">{new Date(row.scraped_at).toLocaleString()}</td>
-            <td className="num">₹{row.price}</td>
-            <td className="num">₹{row.mrp}</td>
+            <td className="num">Rs.{row.price}</td>
+            <td className="num">Rs.{row.mrp}</td>
             <td>
               <span
                 className={`status-dot ${row.in_stock ? "in-stock" : "out-stock"}`}
@@ -33,4 +31,6 @@ export default function PriceHistoryTable({ history }) {
       </tbody>
     </table>
   );
-}
+};
+
+export default PriceHistoryTable;

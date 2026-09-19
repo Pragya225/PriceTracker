@@ -1,7 +1,3 @@
-// ============================================
-// src/services/priceClient.js
-// (yehi logic hai jo pehle diya tha, bas import/export mein)
-// ============================================
 import crypto from "crypto";
 
 const BASE = "https://demo.inelabteamdev.com";

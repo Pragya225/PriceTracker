@@ -1,20 +1,15 @@
-/* ============================================
-   src/index.css
-   Global tokens, reset, base typography
-   ============================================ */
-
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 :root {
-  --ink: #1b1712; /* base background — warm dark charcoal, not pure black */
-  --surface: #221e17; /* slightly lighter panel background */
-  --paper: #e6e2d3; /* primary text — warm parchment off-white */
-  --muted: #8c8574; /* secondary text */
-  --amber: #d98f2b; /* single accent — actions, links, active states */
+  --ink: #1b1712;
+  --surface: #221e17;
+  --paper: #e6e2d3;
+  --muted: #8c8574;
+  --amber: #d98f2b;
   --amber-dim: #a97426;
-  --green: #6b9c6e; /* in stock / success */
-  --red: #b85c4e; /* out of stock / failed */
-  --line: #3a3427; /* hairline dividers */
+  --green: #6b9c6e;
+  --red: #b85c4e;
+  --line: #3a3427;
 
   --font-heading: "Newsreader", serif;
   --font-body: "IBM Plex Sans", sans-serif;
@@ -68,8 +63,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* numeric/data values — always monospace with tabular alignment,
-   this is the one recurring "rule" that ties the whole app together */
 .num {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;

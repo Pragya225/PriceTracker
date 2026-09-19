@@ -1,7 +1,3 @@
-// ============================================
-// src/main.jsx
-// (Vite pehle se banata hai, bas BrowserRouter add karna hai)
-// ============================================
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";

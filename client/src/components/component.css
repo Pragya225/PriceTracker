@@ -1,9 +1,3 @@
-/* ============================================
-   src/components/components.css
-   (shared by ProductSearchResult, TrackedProductCard,
-   PriceHistoryTable, ScrapeLogTable)
-   ============================================ */
-
 .result-row {
   display: flex;
   justify-content: space-between;

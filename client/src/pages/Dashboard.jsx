@@ -1,12 +1,9 @@
-// ============================================
-// src/pages/Dashboard.jsx
-// ============================================
 import { useEffect, useState } from "react";
 import { getTrackedProducts } from "../api.js";
 import TrackedProductCard from "../components/TrackedProductCard.jsx";
 import "./styles/Dashboard.css";
 
-export default function Dashboard() {
+const Dashboard = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -35,7 +32,7 @@ export default function Dashboard() {
 
       {products.length === 0 && (
         <p className="empty-state">
-          Nothing tracked yet — search for a product first.
+          Nothing tracked yet - search for a product first.
         </p>
       )}
 
@@ -46,4 +43,5 @@ export default function Dashboard() {
       </div>
     </div>
   );
-}
+};
+export default Dashboard;

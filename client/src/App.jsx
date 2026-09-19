@@ -1,12 +1,10 @@
-// ============================================
-// src/App.jsx
-// ============================================
 import { NavLink, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import "./App.css";
-export default function App() {
+
+const App = () => {
   return (
     <div>
       <nav className="app-nav">
@@ -33,4 +31,6 @@ export default function App() {
       </Routes>
     </div>
   );
-}
+};
+
+export default App;

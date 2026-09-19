@@ -1,10 +1,9 @@
-// src/services/catalogClient.js
 const BASE = "https://demo.inelabteamdev.com";
 const PAGE_SIZE = 20;
 const CACHE_TTL_MS = 5 * 60 * 1000;
 
 let cache = { items: null, fetchedAt: 0 };
-let inFlight = null; // holds the current in-progress fetch promise, if any
+let inFlight = null;
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -22,8 +21,6 @@ async function fetchCatalogPage(page, maxAttempts = 4) {
       );
 
       if (res.status === 429) {
-        // real rate limit — back off much longer, this is the store telling
-        // us to slow down, not a random flaky failure
         const wait = 1500 * attempt;
         console.log(
           `[catalog] page ${page} rate limited (429), waiting ${wait}ms`,
@@ -53,8 +50,6 @@ async function fetchAllPages() {
   const totalPages = first.pages;
 
   for (let p = 2; p <= totalPages; p++) {
-    // small gap between every page, even on success — avoids tripping
-    // the rate limiter in the first place instead of just reacting to it
     await sleep(150);
     const page = await fetchCatalogPage(p);
     items = items.concat(page.items);
@@ -66,9 +61,6 @@ async function fetchAllPages() {
 export async function getFullCatalog() {
   const now = Date.now();
   if (cache.items && now - cache.fetchedAt < CACHE_TTL_MS) return cache.items;
-
-  // if a fetch is already running, wait for that one instead of starting
-  // a second parallel loop — this is what was causing the 429 storm
   if (inFlight) return inFlight;
 
   inFlight = fetchAllPages()
@@ -78,7 +70,7 @@ export async function getFullCatalog() {
       return items;
     })
     .catch((err) => {
-      inFlight = null; // let a future call retry instead of getting stuck
+      inFlight = null;
       throw err;
     });
 

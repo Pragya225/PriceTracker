@@ -1,13 +1,9 @@
-// ============================================
-// src/controllers/scrapeController.js
-// ============================================
-import db2 from "../db/db.js";
+import DB from "../db/db.js";
 import { scrapeOne as scrapeOneProduct } from "../services/scraper.js";
 
 export const runAll = async (req, res) => {
-  const { data: products, error } = await db2
-    .from("tracked_products")
-    .select("*");
+  const { data: products, error } =
+    await DB.from("tracked_products").select("*");
   if (error) return res.status(500).json({ error: error.message });
 
   const results = [];
@@ -20,8 +16,7 @@ export const runAll = async (req, res) => {
 };
 
 export const runOne = async (req, res) => {
-  const { data: p, error } = await db2
-    .from("tracked_products")
+  const { data: p, error } = await DB.from("tracked_products")
     .select("*")
     .eq("id", req.params.id)
     .single();
