@@ -156,4 +156,4 @@ every attempt (success, retried, or failed) is written to `scrape_log`.
 - Concurrent catalog fetches are deduplicated (an in-flight lock) after we
   found that parallel calls were triggering rate limiting (HTTP 429) from the
   store.
-- See `DESIGN_NOTE.md` for the full reliability strategy and trade-offs.
+- See `DesignNote.md` for the full reliability strategy and trade-offs.
