@@ -94,6 +94,18 @@ Start the server:
 node index.js
 ```
 
+## Running the scraper directly (headed mode)
+
+To see the scraper run against a single product without tracking it in
+the database:
+
+    cd server
+    node scrape.js <productId>
+
+This prints each step live — challenge fetch, proof-of-work, session,
+and decrypted price — including retries if the store responds slowly
+or fails.
+
 ## Setup — frontend
 
 ```
