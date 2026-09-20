@@ -1,11 +1,3 @@
-// scrape-demo.js
-// Standalone demo script for the "headed mode" recording — no database,
-// no tracking needed. Just run:
-//   node scrape-demo.js <productId>
-//
-// It shows every step of the challenge/PoW/session/decrypt flow, with
-// retries logged live, exactly like the real scraper does internally.
-
 import { getProductPrice } from "./src/services/priceClient.js";
 
 const productId = process.argv[2];
